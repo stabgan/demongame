@@ -3,14 +3,12 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity WebGL Player | UI and text</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demon vs God — A Text Adventure Game</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
     <script src="TemplateData/UnityProgress.js"></script>
     <script src="Build/UnityLoader.js"></script>
-    <script>
-      var gameInstance = UnityLoader.instantiate("gameContainer", "Build/demonvsgod.json", {onProgress: UnityProgress});
-    </script>
   </head>
   <body>
     <div class="webgl-content">
@@ -18,8 +16,17 @@
       <div class="footer">
         <div class="webgl-logo"></div>
         <div class="fullscreen" onclick="gameInstance.SetFullscreen(1)"></div>
-        <div class="title">Made by Kaustabh Ganguly © 2019 | Stabgan</div>
+        <div class="title">Made by Kaustabh Ganguly &copy; 2019 | Stabgan</div>
       </div>
     </div>
+    <noscript>
+      <p style="text-align:center; padding:2em; font-family:sans-serif;">
+        JavaScript is required to run this game. Please enable JavaScript in your browser.
+      </p>
+    </noscript>
+    <script>
+      // Instantiate after DOM is ready so #gameContainer exists
+      var gameInstance = UnityLoader.instantiate("gameContainer", "Build/demonvsgod.json", {onProgress: UnityProgress});
+    </script>
   </body>
 </html>
